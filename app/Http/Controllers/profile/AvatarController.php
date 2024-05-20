@@ -9,7 +9,9 @@ use App\Http\Requests\UpdateAvatarRequest;
 class AvatarController extends Controller
 {
     public function update(UpdateAvatarRequest $request){
-        dd($request->all());
+
+        $path = $request->file('avater')->store('avatars', 'public');
+        auth()->user()->update(['avater' => $path]);
         return redirect(route('profile.edit'));
     }
 }
