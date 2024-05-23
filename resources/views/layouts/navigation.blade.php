@@ -21,7 +21,7 @@
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
-                <x-nav-link class="mr-6" :href="route('ticket.create')">
+                <x-nav-link class="mr-6" :href="route('ticket.index')">
                     {{ __('Ticket') }}
                 </x-nav-link>
                 <x-dropdown align="right" width="48">

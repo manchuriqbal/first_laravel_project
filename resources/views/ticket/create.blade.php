@@ -7,13 +7,13 @@
 
 
 
-        <form method="POST" action="{{ route('ticket.create') }}">
+        <form method="POST" action="{{ route('ticket.store') }}" enctype="multipart/form-data">
             @csrf
 
             <!-- Email Address -->
             <div>
                 <x-input-label for="title" :value="__('Title')" />
-                <x-text-input id="title" class="block mt-1 w-full" type="text" name="title"  required autofocus />
+                <x-text-input id="title" class="block mt-1 w-full" type="text" name="title"  autofocus />
                 <x-input-error :messages="$errors->get('title')" class="mt-2" />
             </div>
 
@@ -23,12 +23,12 @@
 
                 <x-textarea name="description" id="description" />
 
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                <x-input-error :messages="$errors->get('description')" class="mt-2" />
             </div>
 
             <!-- file upload -->
             <div class="mt-4">
-                <x-input-label for="attachment" :value="__('Attachment')" />
+                <x-input-label for="attachment" :value="__('Attachment (if any)')" />
 
                 <x-file-input name="attachment" id="attachment" />
 
