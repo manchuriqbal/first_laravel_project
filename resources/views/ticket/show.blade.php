@@ -14,6 +14,15 @@
                     <p >{{$ticket->created_at->diffForHumans()}}</p>
                 </div>
 
+                <div class="flex justify-between">
+                    <x-primary-button class="ms-3">Edit</x-primary-button>
+                    <form action="{{route('ticket.destroy', $ticket->id)}}" method="post">
+                        @method('delete')
+                        @csrf
+                        <x-primary-button class="ms-3">Delete</x-primary-button>
+                    </form>
+                </div>
+
             </div>
 
     </div>
