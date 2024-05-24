@@ -20,18 +20,14 @@
             <!-- description -->
             <div class="mt-4">
                 <x-input-label for="description" :value="__('Description')"  />
-
-                <x-textarea name="description" id="description" />
-
+                <x-textarea name="description" id="description" value=""/>
                 <x-input-error :messages="$errors->get('description')" class="mt-2" />
             </div>
 
             <!-- file upload -->
             <div class="mt-4">
                 <x-input-label for="attachment" :value="__('Attachment (if any)')" />
-
                 <x-file-input name="attachment" id="attachment" />
-
                 <x-input-error :messages="$errors->get('attachment')" class="mt-2" />
             </div>
 
