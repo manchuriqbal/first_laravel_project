@@ -77,3 +77,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     -attachment nullable
     -user_id req
     -status_changed_by_id nullable
+
+2. Replies 
+    -body (text) {required}
+    -user_id (required) 
+    -ticket_id (required)
