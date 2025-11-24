@@ -26,14 +26,14 @@ This is a basic **blog application** built with **Laravel**. Users can register,
 
 - **User Authentication**: Register, login, logout  
 - **Create, Read, Update, Delete Posts** (CRUD)  
-- **Post Categories / Tags** 
+- **Post Categories / Tags** (if implemented)  
 - **Rich Text or Markdown Editor** for posts  
 - **Image Uploads** for posts  
-- **Comments** on posts 
+- **Comments** on posts (if implemented)  
 - **Search Functionality** to find posts  
 - **Pagination** for listing posts  
 - **Responsive UI** compatible with mobile devices  
-- **Admin Dashboard** to manage posts and users 
+- **Admin Dashboard** to manage posts and users (if implemented)  
 - **SEO Friendly URLs** with slugs  
 - **Timestamps** for posts (`created_at` and `updated_at`)  
 - **Validation & Security** using Laravel built-in features  
@@ -44,30 +44,34 @@ This is a basic **blog application** built with **Laravel**. Users can register,
 - **Frontend**: Blade Templates, Tailwind CSS / Bootstrap  
 - **Database**: MySQL / SQLite / PostgreSQL  
 - **Build Tools**: Vite / Mix  
+- **Testing**: PHPUnit  
+
+## Installation
 
 1. Clone the repository:
-
-'git clone https://github.com/manchuriqbal/blog-post.git'
-'cd blog-post'
-
+```bash
+git clone https://github.com/manchuriqbal/blog-post.git
+cd blog-post
 2. Install PHP dependencies:
+```bash
+composer install
+Install JavaScript dependencies:
 
-'composer install'
-
-3. Install JavaScript dependencies:
-
-'npm install'
+bash
+Copy code
+npm install
 # or
-'yarn install'
+yarn install
+Environment Setup
+Copy .env.example to .env:
 
-## Environment Setup
+bash
+Copy code
+cp .env.example .env
+Set environment variables in .env:
 
-1. Copy .env.example to .env:
-
-'cp .env.example .env'
-
-2. Set environment variables in .env:
-
+makefile
+Copy code
 APP_NAME=BlogPost
 APP_URL=http://localhost
 DB_CONNECTION=mysql
@@ -76,33 +80,96 @@ DB_PORT=3306
 DB_DATABASE=blog_post
 DB_USERNAME=root
 DB_PASSWORD=
+Generate application key:
 
-3. Generate application key:
+bash
+Copy code
+php artisan key:generate
+Database
+Run migrations:
 
-'php artisan key:generate'
+bash
+Copy code
+php artisan migrate
+(Optional) Seed the database:
 
+bash
+Copy code
+php artisan db:seed
+Build & Run
+Build frontend assets:
 
+bash
+Copy code
+npm run dev
+# or
+yarn dev
+Start the development server:
 
-## Database
-Run migrations using `php artisan migrate`. Optionally, seed the database using `php artisan db:seed`.
+bash
+Copy code
+php artisan serve
+Visit http://localhost:8000 to access the application.
 
-## Build & Run
-Build frontend assets using `npm run dev` or `yarn dev`. Start the development server using `php artisan serve`. Visit `http://localhost:8000` to access the application.
+Usage
+Create a Post: Log in → New Post → Fill title, content, optionally upload image → Save / Publish
 
-## Usage
-Log in and create a post by filling title, content, optionally uploading image, and saving/publishing. Edit or delete posts as needed. Homepage lists all posts with pagination. Use search bar to find posts. Add comments under posts (if implemented). Filter posts by categories or tags.
+Edit / Delete Post: Navigate to your post → Edit or Delete
 
-## Testing
-Run automated tests using `php artisan test` or `./vendor/bin/phpunit`.
+View Posts: Homepage lists all posts with pagination
 
-## Deployment
-Set web server to point to `public` directory. Configure environment variables in `.env`. Install dependencies in production using `composer install --optimize-autoloader --no-dev` and build frontend assets using `npm run build`. Run migrations using `php artisan migrate --force`.
+Search Posts: Use search bar to find posts
 
-## Contributing
-Fork the repository, create a branch (`feature/my-feature`), make changes, add tests/documentation, submit a pull request.
+Commenting: Add comments under posts (if implemented)
 
-## License
-This project is open-source. Specify license (MIT, Apache, etc.).
+Categories / Tags: Filter posts by categories or tags
 
-## Contact
-Author: Manchur Iqbal, GitHub: [manchuriqbal](https://github.com/manchuriqbal), Email: _your-email@example.com_ (replace with your contact)
+Testing
+Run automated tests:
+
+bash
+Copy code
+php artisan test
+Or with PHPUnit:
+
+bash
+Copy code
+./vendor/bin/phpunit
+Deployment
+Steps to deploy:
+
+Set web server to point to public directory
+
+Configure environment variables in .env
+
+Install dependencies in production:
+
+bash
+Copy code
+composer install --optimize-autoloader --no-dev
+npm run build
+Run migrations:
+
+bash
+Copy code
+php artisan migrate --force
+Contributing
+Fork the repository
+
+Create a branch (feature/my-feature)
+
+Make changes
+
+Add tests and documentation
+
+Submit a pull request
+
+License
+This project is open-source. Specify your license here (MIT, Apache, etc.).
+
+Contact
+Author: Manchur Iqbal
+
+GitHub: manchuriqbal
+
+Email: your-email@example.com (replace with your contact)
