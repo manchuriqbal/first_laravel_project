@@ -1,6 +1,6 @@
 # Blog Post
 
-A simple and elegant **Laravel blog application** to create, read, update, and delete blog posts. This project is perfect for learning Laravel's core features like routing, models, controllers, authentication, and Blade templates.
+A simple and elegant **Laravel blog application** to create, read, update, and delete blog posts. This project is perfect for learning Laravel's core features like routing, models, controllers, authentication, and Blade templates. It also includes an **Admin Panel** where administrators can manage users, posts, categories, and comments, providing full control over the blog content and user permissions.
 
 ## Table of Contents
 
